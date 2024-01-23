@@ -1,0 +1,23 @@
+---
+// IMPORTS ASTRO ATOMS
+import HeadingTwoOrangeUppercase from "../../atoms/heading/two/orange/Uppercase.astro"
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "../../layouts/Container.astro"
+
+const data = {
+
+    title: "Digital Marketing Agency Perth",
+    sub_title: "Digital Marketing Campaigns To Get You Wiggling On",
+    description: "It doesn’t matter what you call yourself. It just matters how you got here."
+
+
+}
+---
+<Container>
+    <section class="py-32 space-y-10">
+        <HeadingTwoOrangeUppercase>{ data.title }</HeadingTwoOrangeUppercase>
+        <h3 class="text-6xl font-lato font-bold capitalize">{ data.sub_title } <span class="text-lo_orange">The Dance Floor.</span></h3>
+        <p>{ data.description }</p>
+    </section>
+</Container>

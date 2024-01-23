@@ -8,14 +8,15 @@
 // const network_data = await fetch( endpoint + "/home" )
 // const data_json = await network_data.json()
 
+// IMPORTS JSX COMPONENTS
+import Header from "../components/common/header/Header"
+
 // IMPORT ASTRO COMPONENTS
 import Layout from "../layouts/Layout.astro"
 import HeaderBanner from "../components/common/HeaderBanner.astro"
 import Hero from "../components/home/Hero.astro"
 import Awards from "../components/home/awards/Awards.astro"
-
-// IMPORTS JSX COMPONENTS
-import Header from "../components/common/header/Header"
+import DMAgencyPerth from "../components/home/DMAgencyPerth.astro"
 ---
 <Layout>
 	<section class="md:h-screen md:max-h-screen bg-gradient-to-b from-[#303236] to-[#130904]">
@@ -24,4 +25,5 @@ import Header from "../components/common/header/Header"
 		<Hero />
 	</section>
 	<Awards />
+	<DMAgencyPerth />
 </Layout>
