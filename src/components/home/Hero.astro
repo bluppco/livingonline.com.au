@@ -5,14 +5,7 @@ import Container from "../../layouts/Container.astro"
 // IMPORTS ASTRO ATOMS
 import Button from "../../atoms/Button.astro"
 
-const data = {
-
-    title: "The Perth Digital Marketing Agency That Will",
-    description: "We grow brands so fast that it freaks our grandmas out. With more than 14 years of digital marketing experience, all forged at the sweaty coal face of the internet, it's time for you to ask: how fast do you want to go?",
-    button_title: "Book A Consultation",
-    button_link: "/contact-us"
-
-}
+const { data } = Astro.props
 ---
 <Container>
     <section class="h-full w-full flex flex-col gap-10 items-center justify-center py-6">

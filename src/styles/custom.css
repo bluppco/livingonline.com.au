@@ -1,0 +1,5 @@
+.markdown p {
+
+    @apply text-2xl font-lato py-4 !important;
+
+}

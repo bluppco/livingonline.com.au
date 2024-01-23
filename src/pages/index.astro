@@ -20,8 +20,8 @@ import DMAgencyPerth from "../components/home/DMAgencyPerth.astro"
 	<section class="md:h-screen md:max-h-screen bg-gradient-to-b from-[#303236] to-[#130904]">
 		<HeaderBanner />
 		<Header client:load />
-		<Hero />
+		<Hero data={ home_data.hero } />
 	</section>
-	<Awards />
-	<DMAgencyPerth />
+	<Awards data={ home_data.awards } />
+	<DMAgencyPerth data={ home_data.dm_agency_perth } />
 </Layout>
