@@ -1,12 +1,10 @@
 ---
-// import { endpointFetch } from "../functions/endpoint"
+import { homeAPI } from "../api/home/index"
 
-// const runtime = Astro.locals.runtime;
-// const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+const runtime = Astro.locals.runtime;
+const data = await homeAPI( runtime.env.ENVIRONMENT )
 
-// // NETWORK CALL TO GET DATA
-// const network_data = await fetch( endpoint + "/home" )
-// const data_json = await network_data.json()
+const { home_data, case_studies, meta_tags } = data
 
 // IMPORTS JSX COMPONENTS
 import Header from "../components/common/header/Header"
