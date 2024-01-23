@@ -1,0 +1,26 @@
+---
+// IMPORTS ASTRO COMPONENTS
+import AwardImage from "./AwardImage.astro"
+
+const data = Array(6).fill({
+
+    file: "/award-1.webp"
+
+})
+---
+<section class="flex gap-14 items-center bg-lo_zinc p-10">
+    {
+
+        data.map( ( value ) => {
+
+            return(
+                <AwardImage
+                    src={ value.file }
+                    alt=""
+                />
+            )
+
+        })
+
+    }
+</section>

@@ -18,7 +18,8 @@ export default {
 
 			colors: {
 
-				"body": "#ef6d30"
+				"body": "#ef6d30",
+				"lo_zinc": "#f5f5f5",
 
 			}
 		},
