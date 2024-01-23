@@ -1,0 +1,25 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "../../layouts/Container.astro"
+
+// IMPORTS ASTRO ATOMS
+import Button from "../../atoms/Button.astro"
+
+const data = {
+
+    title: "The Perth Digital Marketing Agency That Will",
+    description: "We grow brands so fast that it freaks our grandmas out. With more than 14 years of digital marketing experience, all forged at the sweaty coal face of the internet, it's time for you to ask: how fast do you want to go?",
+    button_title: "Book A Consultation",
+    button_link: "/contact-us"
+
+}
+---
+<Container>
+    <section class="h-full w-full flex flex-col gap-10 items-center justify-center py-6">
+        <h1 class="font-lato text-7xl font-bold text-center text-white leading-snug">{ data.title }<span class="text-body"> Unleash Your God of Growth</span></h1>
+        <p class="font-lato text-white text-3xl font-light text-center leading-normal">{ data.description }</p>
+        <div class="pt-6">
+            <Button href={ data.button_link } aria_label="">{ data.button_title }</Button>
+        </div>
+    </section>
+</Container>
