@@ -12,8 +12,14 @@
 import Layout from "../layouts/Layout.astro"
 import HeaderBanner from "../components/common/HeaderBanner.astro"
 import Masthead from "../components/home/Masthead.astro"
+
+// IMPORTS JSX COMPONENTS
+import Header from "../components/common/header/Header"
 ---
 <Layout>
+	<section class="md:h-screen md:max-h-screen bg-gradient-to-b from-[#303236] to-[#130904]">
 	<HeaderBanner />
+	<Header client:load />
 	<Masthead />
+	</section>
 </Layout>
