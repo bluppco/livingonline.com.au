@@ -1,16 +1,22 @@
+// IMPORTS FRAMER MOTION
 import { motion, useScroll, useAnimation, useMotionValueEvent, AnimatePresence } from "framer-motion"
 
-import React from "react"
+// IMPORTS REACT
+import { useState } from "react"
 
 // IMPORT HEADER COLLECTION
 import { getCollection } from "astro:content"
 
+// IMPORTS COMPONENTS
+import HeaderMobile from "./HeaderMobile"
+
+// IMPORTS CONTENT
 let header_data = await getCollection("header")
 header_data = header_data.sort((a, b) => a.data.order - b.data.order)
 
 const Header = ( props ) => {
 
-    const [ navigationDisplay, updateNavigationDisplay ] = React.useState( null )
+    const [ navigationDisplay, updateNavigationDisplay ] = useState( null )
 
     const { scrollY } = useScroll()
     const squareVariants = {
@@ -72,6 +78,7 @@ const Header = ( props ) => {
                 </nav>
             </motion.header>
         </header>
+        <HeaderMobile />
         </>
     )
 
