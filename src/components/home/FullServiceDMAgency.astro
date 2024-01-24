@@ -20,11 +20,11 @@ const {
 
 } = Astro.props
 ---
-<section class="py-32 bg-gradient-to-b from-[#303236] to-[#130904]">
+<section class="py-16 md:py-28 bg-gradient-to-b from-[#303236] to-[#130904]">
     <Container>
         <section class="space-y-10">
             <HeadingTwoOrangeUppercase>{ data.title }</HeadingTwoOrangeUppercase>
-            <h3 class="text-6xl font-lato font-bold text-white">{ data.sub_title } <span class="text-lo_orange">It’s Easy.</span></h3>
+            <h3 class="text-4xl md:text-6xl font-lato font-bold text-white">{ data.sub_title } <span class="text-lo_orange">It’s Easy.</span></h3>
             <section class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
                 <TitleDescription
                     title={ dm_services.title }

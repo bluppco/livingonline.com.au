@@ -27,7 +27,7 @@
 
 .markdown p {
 
-    @apply text-lg font-lato py-4 !important;
+    @apply md:text-lg font-lato py-2 md:py-4 !important;
 
 }
 
