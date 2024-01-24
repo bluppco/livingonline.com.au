@@ -11,7 +11,7 @@ const Advantage = ( props ) => {
     const html = marked.parse(description)
 
     return(
-        <div class="space-y-6">
+        <div className="space-y-6">
             <HeadingFourJSX>{ title }</HeadingFourJSX>
             <section dangerouslySetInnerHTML={{ __html: html }}className="markdown" />
         </div>
