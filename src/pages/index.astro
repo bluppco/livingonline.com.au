@@ -15,6 +15,7 @@ import HeaderBanner from "../components/common/HeaderBanner.astro"
 import Hero from "../components/home/Hero.astro"
 import Awards from "../components/home/awards/Awards.astro"
 import DMAgencyPerth from "../components/home/DMAgencyPerth.astro"
+import FullServiceDMAgency from "../components/home/FullServiceDMAgency.astro"
 ---
 <Layout>
 	<section class="md:h-screen md:max-h-screen bg-gradient-to-b from-[#303236] to-[#130904]">
@@ -24,4 +25,12 @@ import DMAgencyPerth from "../components/home/DMAgencyPerth.astro"
 	</section>
 	<Awards data={ home_data.awards } />
 	<DMAgencyPerth data={ home_data.dm_agency_perth } />
+	<FullServiceDMAgency
+		data={ home_data.full_service_dm_agency }
+		dm_services={ home_data.dm_services }
+		dm_strategy={ home_data.dm_strategy }
+		dm_planning={ home_data.dm_planning }
+		dm_management={ home_data.dm_management }
+		dm_audits={ home_data.dm_audits }
+	/>
 </Layout>
