@@ -18,6 +18,7 @@ import DMAgencyPerth from "../components/home/DMAgencyPerth.astro"
 import FullServiceDMAgency from "../components/home/FullServiceDMAgency.astro"
 import Platforms from "../components/home/Platforms.astro"
 import Outcomes from "../components/home/Outcomes.astro"
+import TopDMCompany from "../components/home/TopDMCompany.astro";
 ---
 <Layout>
 	<section class="md:h-screen md:max-h-screen bg-gradient-to-b from-[#303236] to-[#130904]">
@@ -41,5 +42,11 @@ import Outcomes from "../components/home/Outcomes.astro"
 		skyrocketing_revenue={ home_data.skyrocketing_revenue }
 		massively_reduced_costs={ home_data.massively_reduced_costs }
 		blazingly_fast_speed={ home_data.blazingly_fast_speed }
+	/>
+	<TopDMCompany
+		data={ home_data.top_dm_company }
+		unchain_yourself={ home_data.unchain_yourself }
+		bake_yourself_profit={ home_data.bake_yourself_profit }
+		rediscover_the_sweet_feeling={ home_data.rediscover_the_sweet_feeling }
 	/>
 </Layout>

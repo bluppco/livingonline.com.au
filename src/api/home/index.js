@@ -71,7 +71,7 @@ export const homeAPI = async ( environment ) => {
             home_data.massively_reduced_costs = data
         else if ( data.slug === "blazingly-fast-speed" )
             home_data.blazingly_fast_speed = data
-        else if ( data.slug === "unchain-yourself-from-frustration" )
+        else if ( data.slug === "unchain-yourself" )
             home_data.unchain_yourself = data
         else if ( data.slug === "bake-yourself-profit" )
             home_data.bake_yourself_profit = data

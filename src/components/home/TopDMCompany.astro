@@ -7,6 +7,7 @@ import Container from "../../layouts/Container.astro"
 
 // IMPORTS ASTRO ATOMS
 import HeadingTwoOrangeUppercase from "../../atoms/heading/two/orange/Uppercase.astro"
+import Button from "../../atoms/Button.astro"
 
 // IMPORTS JSX COMPONENTS
 import Advantage from "./Advantage"
@@ -14,9 +15,9 @@ import Advantage from "./Advantage"
 const {
 
     data,
-    skyrocketing_revenue,
-    massively_reduced_costs,
-    blazingly_fast_speed
+    unchain_yourself,
+    bake_yourself_profit,
+    rediscover_the_sweet_feeling
 
 } = Astro.props
 
@@ -26,20 +27,21 @@ const html = marked.parse( data.description )
     <section class="py-32 space-y-10">
         <HeadingTwoOrangeUppercase>{ data.title }</HeadingTwoOrangeUppercase>
         <h3 class="text-6xl font-lato font-bold leading-tight">{ data.sub_title }</h3>
-        <section set:html={ html } class="markdown" />
-        <section class="grid grid-cols-3 gap-8">
+        <section class="grid grid-cols-3 gap-8 pt-10">
             <Advantage
-                title={ skyrocketing_revenue.title }
-                description={ skyrocketing_revenue.description }
+                title={ unchain_yourself.title }
+                description={ unchain_yourself.description }
             />
             <Advantage
-                title={ massively_reduced_costs.title }
-                description={ massively_reduced_costs.description }
+                title={ bake_yourself_profit.title }
+                description={ bake_yourself_profit.description }
             />
             <Advantage
-                title={ blazingly_fast_speed.title }
-                description={ blazingly_fast_speed.description }
+                title={ rediscover_the_sweet_feeling.title }
+                description={ rediscover_the_sweet_feeling.description }
             />
         </section>
+        <section set:html={ html } class="markdown" />
+        <Button href={ data.button_title }>{ data.button_title }</Button>
     </section>
 </Container>
