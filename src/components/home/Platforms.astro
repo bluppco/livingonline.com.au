@@ -9,7 +9,7 @@ const { data } = Astro.props
 
 const images = data.images.sort( ( a,b ) => a.order - b.order )
 ---
-<section class="py-32 space-y-20 md:px-20 bg-lo_zinc">
+<section class="py-16 md:py-28 space-y-20 px-4 md:px-20 bg-lo_zinc">
     <HeadingTwoCenter>{ data.title }</HeadingTwoCenter>
     <div class="grid grid-cols-2 md:grid-cols-5">
         {
@@ -17,11 +17,11 @@ const images = data.images.sort( ( a,b ) => a.order - b.order )
             images.map( ( value ) => {
 
                 return(
-                    <div class="w-full h-28 border-r border-b">
+                    <div class="w-full h-16 md:h-28 border-r border-b">
                         <img
                             src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
                             alt=""
-                            class="w-full h-28 object-cover"
+                            class="w-full h-16 md:h-28 object-contain"
                         />
                     </div>
                 )
