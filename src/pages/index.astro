@@ -18,10 +18,15 @@ import DMAgencyPerth from "../components/home/DMAgencyPerth.astro"
 import FullServiceDMAgency from "../components/home/FullServiceDMAgency.astro"
 import Platforms from "../components/home/Platforms.astro"
 import Outcomes from "../components/home/Outcomes.astro"
-import TopDMCompany from "../components/home/TopDMCompany.astro";
-import Contact from "../components/home/Contact.astro";
+import TopDMCompany from "../components/home/TopDMCompany.astro"
+import Contact from "../components/home/Contact.astro"
+import CaseStudies from "../components/home/case-studies/CaseStudies.astro"
 ---
-<Layout>
+<Layout
+	title={ meta_tags.title }
+	description={ meta_tags.description }
+	image={ meta_tags.image }
+>
 	<section class="md:h-screen md:max-h-screen bg-gradient-to-b from-[#303236] to-[#130904]">
 		<HeaderBanner />
 		<Header client:load />
@@ -43,6 +48,10 @@ import Contact from "../components/home/Contact.astro";
 		skyrocketing_revenue={ home_data.skyrocketing_revenue }
 		massively_reduced_costs={ home_data.massively_reduced_costs }
 		blazingly_fast_speed={ home_data.blazingly_fast_speed }
+	/>
+	<CaseStudies
+		data={ home_data.case_studies }
+		case_studies={ case_studies }
 	/>
 	<TopDMCompany
 		data={ home_data.top_dm_company }
