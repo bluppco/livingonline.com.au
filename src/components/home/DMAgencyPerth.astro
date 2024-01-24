@@ -1,0 +1,22 @@
+---
+// IMPORTS MARKED
+import { marked } from "marked"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoOrangeUppercase from "../../atoms/heading/two/orange/Uppercase.astro"
+import Button from "../../atoms/Button.astro"
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "../../layouts/Container.astro"
+
+const { data } = Astro.props
+const html = marked.parse(data.description)
+---
+<Container>
+    <section class="py-28 space-y-10">
+        <HeadingTwoOrangeUppercase>{ data.title }</HeadingTwoOrangeUppercase>
+        <h3 class="text-6xl font-lato font-bold capitalize">{ data.sub_title } <span class="text-lo_orange">The Dance Floor.</span></h3>
+        <section set:html={ html } class="markdown" />
+        <Button href={ data.button_link }>{ data.button_title }</Button>
+    </section>
+</Container>

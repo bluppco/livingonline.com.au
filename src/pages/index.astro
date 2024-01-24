@@ -1,19 +1,65 @@
 ---
-// import { endpointFetch } from "../functions/endpoint"
+import { homeAPI } from "../api/home/index"
 
-// const runtime = Astro.locals.runtime;
-// const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+const runtime = Astro.locals.runtime;
+const data = await homeAPI( runtime.env.ENVIRONMENT )
 
-// // NETWORK CALL TO GET DATA
-// const network_data = await fetch( endpoint + "/home" )
-// const data_json = await network_data.json()
+const { home_data, case_studies, meta_tags } = data
+
+// IMPORTS JSX COMPONENTS
+import Header from "../components/common/header/Header"
 
 // IMPORT ASTRO COMPONENTS
 import Layout from "../layouts/Layout.astro"
 import HeaderBanner from "../components/common/HeaderBanner.astro"
-import Masthead from "../components/home/Masthead.astro"
+import Hero from "../components/home/Hero.astro"
+import Awards from "../components/home/awards/Awards.astro"
+import DMAgencyPerth from "../components/home/DMAgencyPerth.astro"
+import FullServiceDMAgency from "../components/home/FullServiceDMAgency.astro"
+import Platforms from "../components/home/Platforms.astro"
+import Outcomes from "../components/home/Outcomes.astro"
+import TopDMCompany from "../components/home/TopDMCompany.astro"
+import Contact from "../components/home/Contact.astro"
+import CaseStudies from "../components/home/case-studies/CaseStudies.astro"
 ---
-<Layout>
-	<HeaderBanner />
-	<Masthead />
+<Layout
+	title={ meta_tags.title }
+	description={ meta_tags.description }
+	image={ meta_tags.image }
+>
+	<section class="md:h-screen md:max-h-screen bg-gradient-to-b from-[#303236] to-[#130904]">
+		<HeaderBanner />
+		<Header client:load />
+		<Hero data={ home_data.hero } />
+	</section>
+	<Awards data={ home_data.awards } />
+	<DMAgencyPerth data={ home_data.dm_agency_perth } />
+	<FullServiceDMAgency
+		data={ home_data.full_service_dm_agency }
+		dm_services={ home_data.dm_services }
+		dm_strategy={ home_data.dm_strategy }
+		dm_planning={ home_data.dm_planning }
+		dm_management={ home_data.dm_management }
+		dm_audits={ home_data.dm_audits }
+	/>
+	<Platforms data={ home_data.platforms } />
+	<Outcomes
+		data={ home_data.outcomes }
+		skyrocketing_revenue={ home_data.skyrocketing_revenue }
+		massively_reduced_costs={ home_data.massively_reduced_costs }
+		blazingly_fast_speed={ home_data.blazingly_fast_speed }
+	/>
+	<CaseStudies
+		data={ home_data.case_studies }
+		case_studies={ case_studies }
+	/>
+	<TopDMCompany
+		data={ home_data.top_dm_company }
+		unchain_yourself={ home_data.unchain_yourself }
+		bake_yourself_profit={ home_data.bake_yourself_profit }
+		rediscover_the_sweet_feeling={ home_data.rediscover_the_sweet_feeling }
+	/>
+	<Contact
+		data={ home_data.contact }
+	/>
 </Layout>

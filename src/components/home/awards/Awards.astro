@@ -1,0 +1,27 @@
+---
+// IMPORTS CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
+
+// IMPORTS ASTRO COMPONENTS
+import AwardImage from "./AwardImage.astro"
+
+const { data } = Astro.props
+
+const images = data.images.sort(( a,b ) => a.order - b.order )
+---
+<section class="flex gap-4 items-center bg-lo_zinc p-10">
+    {
+
+        images.map( ( value ) => {
+
+            return(
+                <AwardImage
+                    src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
+                    alt=""
+                />
+            )
+
+        })
+
+    }
+</section>
