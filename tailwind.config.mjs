@@ -21,6 +21,8 @@ export default {
 				"body": "#ef6d30",
 				"lo_orange": "#f6851c",
 				"lo_zinc": "#f5f5f5",
+				"lo_blue": "#1396df",
+				"lo_light_blue": "#37adee"
 
 			}
 		},

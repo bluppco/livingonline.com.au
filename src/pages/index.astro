@@ -16,7 +16,8 @@ import Hero from "../components/home/Hero.astro"
 import Awards from "../components/home/awards/Awards.astro"
 import DMAgencyPerth from "../components/home/DMAgencyPerth.astro"
 import FullServiceDMAgency from "../components/home/FullServiceDMAgency.astro"
-import Platforms from "../components/home/Platforms.astro";
+import Platforms from "../components/home/Platforms.astro"
+import Outcomes from "../components/home/Outcomes.astro"
 ---
 <Layout>
 	<section class="md:h-screen md:max-h-screen bg-gradient-to-b from-[#303236] to-[#130904]">
@@ -35,4 +36,10 @@ import Platforms from "../components/home/Platforms.astro";
 		dm_audits={ home_data.dm_audits }
 	/>
 	<Platforms data={ home_data.platforms } />
+	<Outcomes
+		data={ home_data.outcomes }
+		skyrocketing_revenue={ home_data.skyrocketing_revenue }
+		massively_reduced_costs={ home_data.massively_reduced_costs }
+		blazingly_fast_speed={ home_data.blazingly_fast_speed }
+	/>
 </Layout>
