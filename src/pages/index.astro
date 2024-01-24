@@ -19,6 +19,7 @@ import FullServiceDMAgency from "../components/home/FullServiceDMAgency.astro"
 import Platforms from "../components/home/Platforms.astro"
 import Outcomes from "../components/home/Outcomes.astro"
 import TopDMCompany from "../components/home/TopDMCompany.astro";
+import Contact from "../components/home/Contact.astro";
 ---
 <Layout>
 	<section class="md:h-screen md:max-h-screen bg-gradient-to-b from-[#303236] to-[#130904]">
@@ -48,5 +49,8 @@ import TopDMCompany from "../components/home/TopDMCompany.astro";
 		unchain_yourself={ home_data.unchain_yourself }
 		bake_yourself_profit={ home_data.bake_yourself_profit }
 		rediscover_the_sweet_feeling={ home_data.rediscover_the_sweet_feeling }
+	/>
+	<Contact
+		data={ home_data.contact }
 	/>
 </Layout>
