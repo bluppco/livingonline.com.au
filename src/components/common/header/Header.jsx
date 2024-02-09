@@ -68,7 +68,7 @@ const Header = ( props ) => {
                             header_data.map( ( value ) => {
 
                                 return (
-                                    <li className="font-lato text-lg cursor-pointer text-white" key={ "navigation-" + value.slug } onMouseEnter={ () => updateNavigationDisplay( value.data.order ) }>
+                                    <li className="font-lato cursor-pointer text-white tracking-widest" key={ "navigation-" + value.slug } onMouseEnter={ () => updateNavigationDisplay( value.data.order ) }>
                                         <a href={ value.data.slug }>{ value.data.title }</a>
                                     </li>
                                 )
