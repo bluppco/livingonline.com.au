@@ -11,7 +11,7 @@ const HeaderMobile = ( props ) => {
     const [ isOpen, updateOpen ] = useState( false )
 
     return (
-        <header className={` ${ env === "staging" ? "mt-16" : "" } md:hidden px-4 py-4 w-full`}>
+        <header className={` ${ env === "staging" ? "mt-16" : "" } md:hidden px-4 py-4 w-full bg-gradient-to-b from-[#303236] to-[#130904]`}>
             <div className="flex justify-between items-center z-20">
                 <a href="/">
                     <div className="w-52 aspect-[4/1]">

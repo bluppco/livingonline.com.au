@@ -16,6 +16,8 @@ header_data = header_data.sort((a, b) => a.data.order - b.data.order)
 
 const Header = ( props ) => {
 
+    const { bg } = props
+
     const [ navigationDisplay, updateNavigationDisplay ] = useState( null )
 
     const { scrollY } = useScroll()
@@ -43,7 +45,7 @@ const Header = ( props ) => {
     })
     return (
         <>
-        <header className="hidden md:block h-20" id="header">
+        <header className={` ${ bg ? "bg-gradient-to-b from-[#303236] to-[#130904]" : "" } hidden md:block h-20`} id="header">
             <motion.header className="w-full h-full px-8"
                 variants={ squareVariants }
                 initial="display"
@@ -66,7 +68,7 @@ const Header = ( props ) => {
                             header_data.map( ( value ) => {
 
                                 return (
-                                    <li className="font-lato text-lg cursor-pointer text-white" key={ "navigation-" + value.slug } onMouseEnter={ () => updateNavigationDisplay( value.data.order ) }>
+                                    <li className="font-lato cursor-pointer text-white tracking-widest" key={ "navigation-" + value.slug } onMouseEnter={ () => updateNavigationDisplay( value.data.order ) }>
                                         <a href={ value.data.slug }>{ value.data.title }</a>
                                     </li>
                                 )
