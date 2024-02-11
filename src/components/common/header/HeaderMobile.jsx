@@ -58,7 +58,7 @@ const HeaderMobile = ( props ) => {
                         transition={{ duration: 0.3 }}
                         className="grow"
                     >
-                        <div className="flex flex-col gap-1 items-center justify-center h-full z-10">
+                        <div className={`flex flex-col gap-1 items-center justify-center h-full relative ${ isOpen ? "z-50" : "hidden"}`}>
                             <ul className="flex flex-col justify-center items-center gap-8">
                                 <HeaderMobileItem href="/">Home</HeaderMobileItem>
                                 <HeaderMobileItem href="/digital-marketing-agency">Digital Marketing</HeaderMobileItem>
