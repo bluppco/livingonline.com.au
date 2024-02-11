@@ -2,7 +2,7 @@
 import { motion, useScroll, useAnimation, useMotionValueEvent, AnimatePresence } from "framer-motion"
 
 // IMPORTS REACT
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 // IMPORT HEADER COLLECTION
 import { getCollection } from "astro:content"
@@ -17,6 +17,22 @@ header_data = header_data.sort((a, b) => a.data.order - b.data.order)
 const Header = ( props ) => {
 
     const { bg } = props
+
+    const [ isScrolled, setIsScrolled ] = useState( false )
+
+    useEffect(() => {
+
+        const handleScroll = () => {
+
+          setIsScrolled( window.scrollY > 20 )
+
+        }
+
+        window.addEventListener("scroll", handleScroll)
+
+        return () => window.removeEventListener("scroll", handleScroll)
+
+      }, [])
 
     const [ navigationDisplay, updateNavigationDisplay ] = useState( null )
 
@@ -45,40 +61,33 @@ const Header = ( props ) => {
     })
     return (
         <>
-        <header className={` ${ bg ? "bg-gradient-to-b from-[#303236] to-[#130904]" : "" } hidden md:block h-20`} id="header">
-            <motion.header className="w-full h-full px-8"
-                variants={ squareVariants }
-                initial="display"
-                animate={ controls }
-                onMouseLeave={ () => updateNavigationDisplay( null ) }
-            >
-                <nav className="flex justify-between items-center h-full">
-                    <a href="/">
-                        <div className="w-full h-10">
-                            <img
-                                src="/logo/living-online.svg"
-                                alt=""
-                                className="w-full h-10 object-contain"
-                            />
-                        </div>
-                    </a>
-                    <ul className="flex gap-6 items-center">
-                        {
+        <header className={` ${ bg ? "bg-gradient-to-b from-[#303236] to-[#130904]" : "" } ${ isScrolled ? "bg-gradient-to-b from-[#303236] to-[#130904]" : "bg-transparent" } hidden md:block md:fixed top-9 h-20 z-50 w-full`} id="header">
+            <nav className="flex justify-between items-center h-full container max-w-8xl mx-auto">
+                <a href="/">
+                    <div className="w-full h-10">
+                        <img
+                            src="/logo/living-online.svg"
+                            alt=""
+                            className="w-full h-10 object-contain"
+                        />
+                    </div>
+                </a>
+                <ul className="flex gap-6 items-center">
+                    {
 
-                            header_data.map( ( value ) => {
+                        header_data.map( ( value ) => {
 
-                                return (
-                                    <li className="font-lato cursor-pointer text-white tracking-widest" key={ "navigation-" + value.slug } onMouseEnter={ () => updateNavigationDisplay( value.data.order ) }>
-                                        <a href={ value.data.slug }>{ value.data.title }</a>
-                                    </li>
-                                )
+                            return (
+                                <li className="font-lato cursor-pointer text-white tracking-widest" key={ "navigation-" + value.slug } onMouseEnter={ () => updateNavigationDisplay( value.data.order ) }>
+                                    <a href={ value.data.slug }>{ value.data.title }</a>
+                                </li>
+                            )
 
-                            })
+                        })
 
-                        }
-                    </ul>
-                </nav>
-            </motion.header>
+                    }
+                </ul>
+            </nav>
         </header>
         <HeaderMobile />
         </>
