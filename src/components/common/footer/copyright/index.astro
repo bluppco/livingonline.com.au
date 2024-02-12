@@ -1,3 +1,12 @@
-<section class="pt-14 border-t border-white/50 mt-24">
+---
+// IMPORTS ASTRO ATOMS
+import Link from "@/atoms/links/target-blank/index.astro"
+---
+<section class="flex justify-between items-center pt-14 border-t border-white/50 mt-24">
     <p class="text-white font-lato">2024 © Living Online. All Rights Reserved.</p>
+    <div>
+        <Link href="/privacy-policy" aria_label="">
+            <p class="text-white hover:text-lo_orange transition-all duration-300">Privacy Policy</p>
+        </Link>
+    </div>
 </section>
