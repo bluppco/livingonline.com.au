@@ -1,18 +1,23 @@
 ---
 // IMPORTS ASTRO COMPONENTS
-import FooterTitle from "../title/index.astro"
 import SocialIcons from "../social-icons/index.astro"
 ---
-<section class="space-y-10">
-    <FooterTitle>Living Online</FooterTitle>
-    <span class="text-3xl text-white font-extrabold font-lato">Call us on </span> <span class="text-3xl text-lo_orange font-extrabold font-lato"><a href="tel:+61 8 9388 8778">+61 8 9388 8778</a></span>
-    <br/>
-    <span class="text-3xl text-white font-extrabold font-lato">Or book a </span> <span class="text-3xl text-lo_orange font-extrabold font-lato"><a href="/contact-us">Consultation</a></span>
-    <br/>
+<section class="space-y-6 md:space-y-10">
+    <h3 class="text-center md:text-left text-white text-xl md:text-2xl font-lato font-bold uppercase tracking-wider">Living Online</h3>
+    <div class="space-y-4">
+        <div class="flex justify-center md:justify-start gap-1">
+            <span class="text-xl md:text-3xl text-white font-extrabold font-lato text-center md:text-left">Call us on </span> <span class="text-xl md:text-3xl text-lo_orange font-extrabold font-lato"><a href="tel:+61 8 9388 8778">+61 8 9388 8778</a></span>
+        </div>
+        <!-- <br/> -->
+        <div class="flex justify-center md:justify-start gap-1">
+            <span class="text-xl md:text-3xl text-white font-extrabold font-lato text-center md:text-left">Or book a </span> <span class="text-xl md:text-3xl text-lo_orange font-extrabold font-lato"><a href="/contact-us">Consultation</a></span>
+        </div>
+    </div>
+    <!-- <br/> -->
     <div class="space-y-1">
-        <p class="text-white text-lg font-lato">Level 1, 330 Churchill Avenue</p>
-        <p class="text-white text-lg font-lato">Subiaco WA 6008</p>
-        <p class="text-white text-lg font-lato">Perth, Australia</p>
+        <p class="text-white text-lg font-lato text-center md:text-left">Level 1, 330 Churchill Avenue</p>
+        <p class="text-white text-lg font-lato text-center md:text-left">Subiaco WA 6008</p>
+        <p class="text-white text-lg font-lato text-center md:text-left">Perth, Australia</p>
     </div>
     <SocialIcons />
 </section>
