@@ -1,0 +1,38 @@
+---
+// IMPORTS ASTRO COMPONENTS
+import SocialIconImage from "./image/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import Link from "@/atoms/links/target-blank/index.astro"
+---
+<section class="flex gap-6 items-center">
+    <SocialIconImage
+        href="https://www.instagram.com/living.online/"
+        src="/social-icons/white/instagram.svg"
+        alt=""
+    />
+    <SocialIconImage
+        href="https://au.linkedin.com/company/living-online/"
+        src="/social-icons/white/linkedin.svg"
+        alt=""
+    />
+    <SocialIconImage
+        href="https://www.facebook.com/LivingOnlineTeam/"
+        src="/social-icons/white/facebook.svg"
+        alt=""
+    />
+    <div>
+        <Link href="https://twitter.com/LivingOnline" aria_label="">
+            <img
+                src="/social-icons/white/x.svg"
+                alt=""
+                class="size-6"
+            />
+        </Link>
+    </div>
+    <SocialIconImage
+        href="https://www.google.com/maps/place/Living+Online/@-31.9476516,115.8247418,17z/data=!3m2!4b1!5s0x2a32a5169cb74017:0x393601ffae7d0417!4m5!3m4!1s0x2a32a516e65220e7:0x31acafa6d52703b!8m2!3d-31.9476516!4d115.8247418"
+        src="/social-icons/white/google.svg"
+        alt=""
+    />
+</section>

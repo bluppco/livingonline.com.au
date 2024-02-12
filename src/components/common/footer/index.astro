@@ -1,0 +1,22 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/Container.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import Marketing from "./marketing/index.astro"
+import Agency from "./agency/index.astro"
+import Contact from "./contact/index.astro"
+import Copyright from "./copyright/index.astro"
+---
+<footer class="bg-lo_black pt-24 pb-20">
+    <Container>
+        <section class="grid grid-cols-2 gap-4">
+            <Contact />
+            <section class="grid grid-cols-2 gap-4">
+                <Marketing />
+                <Agency />
+            </section>
+        </section>
+        <Copyright />
+    </Container>
+</footer>

@@ -7,8 +7,8 @@ import Layout from "@/layouts/Layout.astro"
 import Container from "@/layouts/Container.astro"
 
 // IMPORT COMPONENTS
-// import Footer from "@/components/footer/Footer.astro"
-// import Header from "@/components/header/Header.astro"
+import Footer from "@/components/common/footer/index.astro"
+import Header from "@/components/common/header/Header.jsx"
 import HeaderBanner from "@/components/common/HeaderBanner.astro"
 import BenchmarkingJSX from "@/components/benchmarking"
 ---
@@ -18,11 +18,11 @@ import BenchmarkingJSX from "@/components/benchmarking"
 	image=""
 >
     <HeaderBanner />
-    <!-- <Header /> -->
+    <Header bg={ true } />
     <section class="py-40">
         <Container>
             <BenchmarkingJSX client:load data={ benchmarking }/>
         </Container>
     </section>
-    <!-- <Footer /> -->
+    <Footer />
 </Layout>
