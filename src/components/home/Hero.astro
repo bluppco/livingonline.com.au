@@ -8,8 +8,10 @@ import Button from "../../atoms/Button.astro"
 const { data } = Astro.props
 ---
 <Container>
-    <section class="h-full w-full flex flex-col gap-10 items-center justify-center py-10 md:py-6 md:pb-20 2xl:px-52 md:mt-28">
-        <h1 class="font-lato text-4xl md:text-7xl font-bold text-center text-white !leading-snug">{ data.title }<span class="text-lo_orange"> Unleash Your God of Growth</span></h1>
+    <section class="h-full w-full flex flex-col gap-10 items-center justify-center py-10 md:py-10 md:pb-20 2xl:px-52 md:mt-28">
+        <div class="md:px-16">
+            <h1 class="font-lato text-4xl md:text-7xl font-bold text-center text-white !leading-snug">{ data.title }<span class="text-lo_orange"> Unleash Your God of Growth</span></h1>
+        </div>
         <p class="font-lato text-white text-lg md:text-3xl font-light text-center !leading-normal">{ data.description }</p>
         <div class="pt-6">
             <Button href={ data.button_link } aria_label="">{ data.button_title }</Button>
