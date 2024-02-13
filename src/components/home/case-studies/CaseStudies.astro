@@ -15,12 +15,13 @@ import Button from "../../../atoms/Button.astro"
 const { data, case_studies } = Astro.props
 
 const html = marked.parse(data.description)
+const sub_title = marked.parse( data.sub_title )
 ---
 <section class="py-20 bg-gradient-to-b from-[#303236] to-[#130904]">
     <Container>
         <section class="flex flex-col md:items-center gap-10">
             <HeadingTwoOrangeCenter>{ data.title }</HeadingTwoOrangeCenter>
-            <h3 class="text-4xl md:text-6xl font-lato font-bold capitalize text-white md:text-center">{ data.sub_title }</h3>
+            <section set:html={ sub_title } class="markdown whiteh3 orangeh3" />
             <CaseStudyCarousel
                 data={ case_studies }
                 client:load

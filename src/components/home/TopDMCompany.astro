@@ -22,11 +22,12 @@ const {
 } = Astro.props
 
 const html = marked.parse( data.description )
+const sub_title = marked.parse( data.sub_title )
 ---
 <Container>
     <section class="py-16 md:py-28 space-y-8 md:space-y-10">
         <HeadingTwoOrangeUppercase>{ data.title }</HeadingTwoOrangeUppercase>
-        <h3 class="text-4xl md:text-6xl font-lato font-bold leading-tight">{ data.sub_title }</h3>
+        <section set:html={ sub_title } class="markdown h3 orangeh3" />
         <section class="grid md:grid-cols-3 gap-8 md:pt-10">
             <Advantage
                 title={ unchain_yourself.title }
