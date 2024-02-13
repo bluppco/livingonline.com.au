@@ -13,10 +13,10 @@ const { data } = Astro.props
 const html = marked.parse(data.description)
 ---
 <Container>
-    <section class="py-16 md:py-28 space-y-4 md:space-y-10">
+    <section class="py-16 md:py-28 space-y-8 md:space-y-10">
         <HeadingTwoOrangeUppercase>{ data.title }</HeadingTwoOrangeUppercase>
         <h3 class="text-4xl md:text-6xl font-lato font-bold capitalize">{ data.sub_title } <span class="text-lo_orange">The Dance Floor.</span></h3>
-        <section set:html={ html } class="markdown text-2xl" />
+        <section set:html={ html } class="markdown largetext" />
         <Button href={ data.button_link }>{ data.button_title }</Button>
     </section>
 </Container>

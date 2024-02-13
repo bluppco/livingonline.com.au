@@ -25,7 +25,7 @@ const html = marked.parse(data.description)
                 data={ case_studies }
                 client:load
             />
-            <section set:html={ html } class="markdown text-white md:text-center text-3xl font-bold" />
+            <section set:html={ html } class="markdown text3xl textwhite" />
             <Button href={ data.button_link }>{ data.button_title }</Button>
         </section>
     </Container>

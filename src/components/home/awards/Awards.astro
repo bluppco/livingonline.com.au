@@ -9,16 +9,18 @@ const { data } = Astro.props
 
 const images = data.images.sort(( a,b ) => a.order - b.order )
 ---
-<section class="flex gap-4 items-center justify-between bg-lo_zinc p-10">
+<section class="grid grid-cols-2 gap-8 md:flex md:gap-4 md:items-center md:justify-between bg-lo_zinc p-10">
     {
 
         images.map( ( value ) => {
 
             return(
-                <AwardImage
-                    src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
-                    alt=""
-                />
+                <div class="flex justify-center md:justify-start">
+                    <AwardImage
+                        src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
+                        alt=""
+                    />
+                </div>
             )
 
         })
