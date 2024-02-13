@@ -8,12 +8,14 @@ import Button from "../../atoms/Button.astro"
 
 const { data } = Astro.props
 ---
-<section class="py-20 bg-gradient-to-b from-[#303236] to-[#130904]">
+<section class="py-24 bg-gradient-to-b from-[#303236] to-[#130904]">
     <Container>
-        <section class="flex flex-col items-center gap-10">
+        <section class="flex flex-col items-center gap-10 px-4">
             <HeadingTwoWhiteCenter>{ data.title }</HeadingTwoWhiteCenter>
-            <h3 class="text-4xl md:text-7xl font-lato font-bold capitalize text-white text-center leading-tight">{ data.sub_title }<span class="text-orange font-black"></span></h3>
-            <Button href={ data.button_link }>{ data.button_title }</Button>
+            <h3 class="text-4xl md:text-7xl font-lato font-bold capitalize text-white text-center !leading-tight">{ data.sub_title }<span class="text-orange font-black"></span></h3>
+            <div class="pt-4">
+                <Button href={ data.button_link }>{ data.button_title }</Button>
+            </div>
         </section>
     </Container>
 </section>
