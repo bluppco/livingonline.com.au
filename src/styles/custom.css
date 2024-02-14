@@ -51,17 +51,17 @@
 }
 .markdown.orangeh1 strong {
 
-    @apply text-4xl md:text-7xl font-lato font-bold capitalize text-lo_orange leading-tight md:leading-tight !important;
+    @apply text-4xl md:text-7xl font-lato font-bold capitalize text-lo_orange md:leading-tight !important;
 
 }
 .markdown.orangeh3 strong {
 
-    @apply text-4xl md:text-6xl font-lato font-bold capitalize text-lo_orange leading-tight md:leading-tight !important;
+    @apply text-4xl md:text-6xl font-lato font-bold capitalize text-lo_orange md:leading-tight !important;
 
 }
 .markdown.h1 p {
 
-    @apply font-lato text-4xl md:text-7xl font-bold text-center text-white leading-tight md:leading-tight !important;
+    @apply font-lato text-4xl leading-tight md:text-7xl font-bold text-center text-white md:leading-tight !important;
 
 }
 .markdown.h3 p {
