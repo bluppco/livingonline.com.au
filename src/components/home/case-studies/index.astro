@@ -1,0 +1,45 @@
+---
+// IMPORTS MARKED
+import { marked } from "marked"
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoOrangeCenter from "@/atoms/heading/two/orange/center/index.astro"
+import PrimaryButton from "@/atoms/buttons/primary/index.astro"
+import Link from "@/atoms/links/index.astro"
+
+// IMPORTS JSX COMPONENTS
+import CaseStudyCarousel from "./carousel/index"
+
+const {
+
+    data,
+    case_studies,
+    CDN_LINK,
+    PROJECT
+
+} = Astro.props
+
+const html = marked.parse(data.description)
+const sub_title = marked.parse( data.sub_title )
+---
+<section class="py-20 bg-gradient-to-b from-[#303236] to-[#130904]">
+    <Container>
+        <section class="flex flex-col md:items-center gap-10">
+            <HeadingTwoOrangeCenter>{ data.title }</HeadingTwoOrangeCenter>
+            <section set:html={ sub_title } class="markdown whiteh3 orangeh3" />
+            <CaseStudyCarousel
+                data={ case_studies }
+                CDN_LINK={ CDN_LINK }
+                PROJECT={ PROJECT }
+                client:load
+            />
+            <section set:html={ html } class="markdown text3xl textwhite" />
+            <Link href={ data.button_link } aria_label="">
+                <PrimaryButton>{ data.button_title }</PrimaryButton>
+            </Link>
+        </section>
+    </Container>
+</section>

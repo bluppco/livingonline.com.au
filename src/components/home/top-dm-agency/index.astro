@@ -1,0 +1,51 @@
+---
+// IMPORTS MARKED
+import { marked } from "marked"
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "../../../layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoOrangeUppercase from "../../../atoms/heading/two/orange/uppercase/index.astro"
+import PrimaryButton from "../../../atoms/buttons/primary/index.astro"
+import Link from "@/atoms/links/index.astro"
+
+// IMPORTS JSX COMPONENTS
+import Advantage from "../advantage"
+
+const {
+
+    data,
+    unchain_yourself,
+    bake_yourself_profit,
+    rediscover_the_sweet_feeling
+
+} = Astro.props
+
+const html = marked.parse( data.description )
+const sub_title = marked.parse( data.sub_title )
+---
+<Container>
+    <section class="py-16 md:py-28 space-y-8 md:space-y-10">
+        <HeadingTwoOrangeUppercase>{ data.title }</HeadingTwoOrangeUppercase>
+        <section set:html={ sub_title } class="markdown h3 orangeh3" />
+        <section class="grid md:grid-cols-3 gap-8 md:pt-10">
+            <Advantage
+                title={ unchain_yourself.title }
+                description={ unchain_yourself.description }
+            />
+            <Advantage
+                title={ bake_yourself_profit.title }
+                description={ bake_yourself_profit.description }
+            />
+            <Advantage
+                title={ rediscover_the_sweet_feeling.title }
+                description={ rediscover_the_sweet_feeling.description }
+            />
+        </section>
+        <section set:html={ html } class="markdown text-2xl" />
+        <Link href={ data.button_link } aria_label="">
+            <PrimaryButton>{ data.button_title }</PrimaryButton>
+        </LINK>
+    </section>
+</Container>

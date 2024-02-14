@@ -1,0 +1,31 @@
+---
+// IMPORTS ASTRO ATOMS
+import HeadingTwoCenter from "@/atoms/heading/two/center/index.astro"
+import ContainPicture from "@/atoms/picture/contain/index.astro"
+
+const { data } = Astro.props
+
+const images = data.images.sort( ( a,b ) => a.order - b.order )
+---
+<section class="py-16 md:py-28 space-y-20 px-4 md:px-20 bg-lo_zinc">
+    <HeadingTwoCenter>{ data.title }</HeadingTwoCenter>
+    <div class="grid grid-cols-2 md:grid-cols-5">
+        {
+
+            images.map( ( value ) => {
+
+                return(
+                    <div class="w-full h-16 md:h-28 border-r border-b">
+                        <ContainPicture
+                            src={ value.file }
+                            alt=""
+                            image_width="320"
+                        />
+                    </div>
+                )
+
+            })
+
+        }
+    </div>
+</section>

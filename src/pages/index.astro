@@ -6,27 +6,32 @@ const data = await homeAPI( runtime.env.ENVIRONMENT )
 
 const { home_data, case_studies, meta_tags } = data
 
+const CDN_LINK = runtime.env.CDN_LINK
+const PROJECT = runtime.env.PROJECT
+
 // IMPORTS JSX COMPONENTS
-import Header from "../components/common/header/Header"
+import Header from "../components/common/header"
 
 // IMPORT ASTRO COMPONENTS
-import Layout from "../layouts/Layout.astro"
-import HeaderBanner from "../components/common/HeaderBanner.astro"
-import Hero from "../components/home/Hero.astro"
-import Awards from "../components/home/awards/Awards.astro"
-import DMAgencyPerth from "../components/home/DMAgencyPerth.astro"
-import FullServiceDMAgency from "../components/home/FullServiceDMAgency.astro"
-import Platforms from "../components/home/Platforms.astro"
-import Outcomes from "../components/home/Outcomes.astro"
-import TopDMCompany from "../components/home/TopDMCompany.astro"
-import Contact from "../components/home/Contact.astro"
-import CaseStudies from "../components/home/case-studies/CaseStudies.astro"
-import Footer from "../components/common/footer/Footer.astro"
+import Layout from "../layouts/layout/index.astro"
+import HeaderBanner from "../components/common/header-banner/index.astro"
+import Hero from "../components/home/hero/index.astro"
+import Awards from "../components/home/awards/index.astro"
+import DMAgencyPerth from "../components/home/dm-agency-perth/index.astro"
+import FullServiceDMAgency from "../components/home/full-service-dm-agency/index.astro"
+import Platforms from "../components/home/platforms/index.astro"
+import Outcomes from "../components/home/outcomes/index.astro"
+import TopDMCompany from "../components/home/top-dm-agency/index.astro"
+import Contact from "../components/home/contact/index.astro"
+import CaseStudies from "../components/home/case-studies/index.astro"
+import Footer from "../components/common/footer/index.astro"
 ---
 <Layout
 	title={ meta_tags.title }
 	description={ meta_tags.description }
 	image={ meta_tags.image }
+	CDN_LINK={ CDN_LINK }
+	PROJECT={ PROJECT }
 >
 	<section class="md:h-screen md:max-h-screen bg-gradient-to-b from-[#303236] to-[#130904]">
 		<HeaderBanner />
@@ -53,6 +58,8 @@ import Footer from "../components/common/footer/Footer.astro"
 	<CaseStudies
 		data={ home_data.case_studies }
 		case_studies={ case_studies }
+		CDN_LINK={ CDN_LINK }
+		PROJECT={ PROJECT }
 	/>
 	<TopDMCompany
 		data={ home_data.top_dm_company }

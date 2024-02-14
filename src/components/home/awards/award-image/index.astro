@@ -1,0 +1,12 @@
+---
+// IMPORTS ASTRO ATOMS
+import ContainPicture from "@/atoms/picture/contain/index.astro"
+
+const { src, alt } = Astro.props
+---
+<div class="w-fit h-20">
+    <ContainPicture
+        src={ src }
+        alt={ alt }
+    />
+</div>
