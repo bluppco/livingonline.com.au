@@ -31,16 +31,16 @@ const sub_title = marked.parse( data.sub_title )
         <section set:html={ sub_title } class="markdown h3 orangeh3" />
         <section class="grid md:grid-cols-3 gap-8 md:pt-10">
             <Advantage
-                title={ unchain_yourself.title }
-                description={ unchain_yourself.description }
+                data={ unchain_yourself }
+                client:load
             />
             <Advantage
-                title={ bake_yourself_profit.title }
-                description={ bake_yourself_profit.description }
+                data={ bake_yourself_profit }
+                client:load
             />
             <Advantage
-                title={ rediscover_the_sweet_feeling.title }
-                description={ rediscover_the_sweet_feeling.description }
+                data={ rediscover_the_sweet_feeling }
+                client:load
             />
         </section>
         <section set:html={ html } class="markdown text-2xl" />

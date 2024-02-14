@@ -15,9 +15,9 @@ const html = marked.parse(data.title)
 <Container>
     <section class="h-full w-full flex flex-col gap-10 items-center justify-center py-10 md:py-10 md:pb-20 2xl:px-52 md:mt-28">
         <div class="md:px-16">
-            <section set:html={ html } class="markdown h1 orangeh1 leading-tight" />
+            <section set:html={ html } class="markdown h1 orangeh1" />
         </div>
-        <p class="font-lato text-white text-lg md:text-3xl font-light text-center !leading-normal">{ data.description }</p>
+        <p class="font-lato text-white text-lg md:text-3xl font-light text-center leading-normal md:leading-normal">{ data.description }</p>
         <div class="pt-6">
             <Link href={ data.button_link } aria_label="">
                 <PrimaryButton>{ data.button_title }</PrimaryButton>

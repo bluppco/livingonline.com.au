@@ -36,7 +36,7 @@
 }
 .markdown.text3xl.textwhite p {
 
-    @apply text-white md:text-center text-3xl font-bold leading-tight font-lato py-3 md:py-4 !important;
+    @apply text-white md:text-center text-3xl font-bold leading-tight md:leading-tight font-lato py-3 md:py-4 !important;
 
 }
 .markdown p {
@@ -66,11 +66,11 @@
 }
 .markdown.h3 p {
 
-    @apply font-lato text-4xl md:text-6xl font-bold leading-tight !important;
+    @apply font-lato text-4xl md:text-6xl font-bold leading-tight md:leading-tight !important;
 
 }
 .markdown.whiteh3 p {
 
-    @apply font-lato text-4xl md:text-7xl font-bold text-white leading-tight !important;
+    @apply font-lato text-4xl md:text-7xl font-bold text-white leading-tight md:leading-tight !important;
 
 }
