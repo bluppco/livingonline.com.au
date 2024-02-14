@@ -30,16 +30,16 @@ const sub_title = marked.parse( data.sub_title )
         <section set:html={ html } class="markdown textlg" />
         <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Advantage
-                title={ skyrocketing_revenue.title }
-                description={ skyrocketing_revenue.description }
+                data={ skyrocketing_revenue }
+                client:load
             />
             <Advantage
-                title={ massively_reduced_costs.title }
-                description={ massively_reduced_costs.description }
+                data={ massively_reduced_costs }
+                client:load
             />
             <Advantage
-                title={ blazingly_fast_speed.title }
-                description={ blazingly_fast_speed.description }
+                data={ blazingly_fast_speed }
+                client:load
             />
         </section>
     </section>
