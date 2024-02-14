@@ -60,7 +60,8 @@ module.exports = {
 			"lo_orange": "#F6851C",
 			"lo_zinc": "#F5F5F5",
 			"lo_blue": "#1396DF",
-			"lo_light_blue": "#37ADEE"
+			"lo_light_blue": "#37ADEE",
+			"lo_black": "#110702"
 
 		}
     },

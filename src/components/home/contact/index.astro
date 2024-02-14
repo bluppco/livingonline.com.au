@@ -1,0 +1,28 @@
+---
+// IMPORTS MARKED
+import { marked } from "marked"
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoWhiteCenter from "@/atoms/heading/two/white/center/index.astro"
+import PrimaryButton from "@/atoms/buttons/primary/index.astro"
+import Link from "@/atoms/links/index.astro"
+
+const { data } = Astro.props
+const sub_title = marked.parse( data.sub_title )
+---
+<section class="py-8 md:py-24 bg-gradient-to-b from-[#303236] to-[#130904]">
+    <Container>
+        <section class="flex flex-col items-center gap-10 px-4">
+            <HeadingTwoWhiteCenter>{ data.title }</HeadingTwoWhiteCenter>
+            <section set:html={ sub_title } class="markdown whiteh3 orangeh3" />
+            <div class="pt-4">
+                <Link href={ data.button_link } aria_label="">
+                    <PrimaryButton href={ data.button_link }>{ data.button_title }</PrimaryButton>
+                </Link>
+            </div>
+        </section>
+    </Container>
+</section>

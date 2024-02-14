@@ -1,0 +1,46 @@
+---
+// IMPORTS MARKED
+import { marked } from "marked"
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoOrangeUppercase from "@/atoms/heading/two/orange/uppercase/index.astro"
+
+// IMPORTS JSX COMPONENTS
+import Advantage from "../advantage"
+
+const {
+
+    data,
+    skyrocketing_revenue,
+    massively_reduced_costs,
+    blazingly_fast_speed
+
+} = Astro.props
+
+const html = marked.parse( data.description )
+const sub_title = marked.parse( data.sub_title )
+---
+<Container>
+    <section class="py-16 md:py-28 space-y-4 md:space-y-10">
+        <HeadingTwoOrangeUppercase>{ data.title }</HeadingTwoOrangeUppercase>
+        <section set:html={ sub_title } class="markdown h3 orangeh3" />
+        <section set:html={ html } class="markdown textlg" />
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Advantage
+                data={ skyrocketing_revenue }
+                client:load
+            />
+            <Advantage
+                data={ massively_reduced_costs }
+                client:load
+            />
+            <Advantage
+                data={ blazingly_fast_speed }
+                client:load
+            />
+        </section>
+    </section>
+</Container>
