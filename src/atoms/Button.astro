@@ -1,0 +1,17 @@
+---
+const { href, aria_label, target } = Astro.props
+---
+<div>
+    <a href={ href } aria-label={ aria_label } target={ target ? "_blank" : "" }>
+        <button class="flex md:gap-2 items-center justify-center h-16 px-6 bg-body hover:bg-yellow-500 text-white text-sm md:text-lg font-lato md:font-semibold rounded">
+            <slot/>
+            <div class="size-6">
+                <img
+                    src="/icons/right-arrow.svg"
+                    alt=""
+                    class="size-6"
+                />
+            </div>
+        </button>
+    </a>
+</div>

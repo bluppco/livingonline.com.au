@@ -1,0 +1,32 @@
+---
+// IMPORTS MARKED
+import { marked } from "marked"
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "../../../layouts/Container.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoOrangeCenter from "../../../atoms/heading/two/orange/Center.astro"
+
+// IMPORTS JSX COMPONENTS
+import CaseStudyCarousel from "./CaseStudyCarousel"
+import Button from "../../../atoms/Button.astro"
+
+const { data, case_studies } = Astro.props
+
+const html = marked.parse(data.description)
+---
+<section class="py-20 bg-gradient-to-b from-[#303236] to-[#130904]">
+    <Container>
+        <section class="flex flex-col md:items-center gap-10">
+            <HeadingTwoOrangeCenter>{ data.title }</HeadingTwoOrangeCenter>
+            <h3 class="text-4xl md:text-6xl font-lato font-bold capitalize text-white md:text-center">{ data.sub_title }</h3>
+            <CaseStudyCarousel
+                data={ case_studies }
+                client:load
+            />
+            <section set:html={ html } class="markdown text-white md:text-center text-3xl font-bold" />
+            <Button href={ data.button_link }>{ data.button_title }</Button>
+        </section>
+    </Container>
+</section>

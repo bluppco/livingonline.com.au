@@ -7,7 +7,12 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), tailwind(), react()],
+  integrations: [mdx(), tailwind({applyBaseStyles: false}), react()],
   output: "server",
-  adapter: cloudflare()
+  adapter: cloudflare({
+    runtime: {
+      mode: 'local',
+      type: 'pages'
+    }
+  })
 });

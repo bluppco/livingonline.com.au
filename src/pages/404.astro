@@ -1,0 +1,25 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Layout from "../layouts/Layout.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import Footer from "../components/common/footer/Footer.astro"
+import NotFoundView from "../components/NotFoundView.astro"
+
+// IMPORTS JSX COMPONENTS
+import Header from "../components/common/header/Header"
+---
+<Layout
+	title="4O4 PAGE NOT FOUND"
+	description=""
+	image=""
+>
+    <section class="h-screen max-h-screen">
+        <Header
+            client:load
+            bg={ true }
+        />
+        <NotFoundView />
+    </section>
+	<Footer />
+</Layout>

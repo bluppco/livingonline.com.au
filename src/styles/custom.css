@@ -1,0 +1,38 @@
+.control-dots{
+    bottom: 10px !important;
+}
+
+.carousel .control-dots .dot{
+    background-color: #111111 !important;
+    opacity: 1 !important;
+    border: #FFFFFF !important;
+    box-shadow: none !important;
+    width: 14px !important;
+    height: 14px !important;
+}
+
+.carousel .control-dots .dot:hover{
+    opacity: 0.8 !important;
+}
+
+.carousel .control-dots .dot.selected{
+    background-color: #FFFFFF !important;
+    width: 16px !important;
+    height: 16px !important;
+
+}
+.carousel.carousel-slider{
+    overflow: inherit !important;
+}
+
+.markdown p {
+
+    @apply font-lato py-2 md:py-4 !important;
+
+}
+
+.markdown a {
+
+    @apply text-lo_blue hover:text-lo_light_blue !important;
+
+}
