@@ -1,6 +1,4 @@
 ---
-// IMPORTS MARKED
-import { marked } from "marked"
 
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
@@ -9,8 +7,13 @@ import Container from "@/layouts/container/index.astro"
 import PrimaryButton from "@/atoms/buttons/primary/index.astro"
 import Link from "@/atoms/links/index.astro"
 
+// IMPORTS MARKED
+import { marked } from "marked"
+
+// GET ASTRO PROPS
 const { data } = Astro.props
 const html = marked.parse(data.title)
+
 ---
 <Container>
     <section class="h-full w-full flex flex-col gap-10 items-center justify-center py-10 md:py-10 md:pb-20 2xl:px-52 md:mt-28">
@@ -19,7 +22,7 @@ const html = marked.parse(data.title)
         </div>
         <p class="font-lato text-white text-lg md:text-3xl font-light text-center leading-normal md:leading-normal">{ data.description }</p>
         <div class="pt-6">
-            <Link href={ data.button_link } aria_label="">
+            <Link href={ data.button_link } aria_label={ data.button_title }>
                 <PrimaryButton>{ data.button_title }</PrimaryButton>
             </Link>
         </div>

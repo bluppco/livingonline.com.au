@@ -1,3 +1,10 @@
+// IMPORTS COMPONENTS
+import HeaderMobile from "@/components/common/header/mobile/index.jsx"
+
+// IMPORTS ATOMS
+import Link from "@/atoms/links/jsx/index.jsx"
+import PictureInternalContain from "@/atoms/picture/internal/jsx/contain/index.jsx"
+
 // IMPORTS FRAMER MOTION
 import { useScroll, useAnimation, useMotionValueEvent } from "framer-motion"
 
@@ -7,19 +14,19 @@ import { useState, useEffect } from "react"
 // IMPORT HEADER COLLECTION
 import { getCollection } from "astro:content"
 
-// IMPORTS COMPONENTS
-import HeaderMobile from "./mobile"
-
-// IMPORTS ATOMS
-import Link from "@/atoms/links/jsx/index"
-
-// IMPORTS CONTENT
+// IMPORTS HEADER CONTENT
 let header_data = await getCollection("header")
 header_data = header_data.sort((a, b) => a.data.order - b.data.order)
 
 const Header = ( props ) => {
 
-    const { bg, fixed_top } = props
+    // GET PROPS
+    const {
+
+        bg,
+        fixed_top
+
+    } = props
 
     const [ isScrolled, setIsScrolled ] = useState( false )
 
@@ -66,12 +73,11 @@ const Header = ( props ) => {
         <>
         <header className={` ${ bg ? "bg-gradient-to-b from-[#303236] to-[#130904]" : "" } ${ isScrolled ? "bg-gradient-to-b from-[#303236] to-[#130904]" : "bg-transparent" } ${ fixed_top ? "top-0" : "top-9" } hidden md:block md:fixed h-20 z-50 w-full`} id="header">
             <nav className="flex justify-between items-center h-full container max-w-8xl mx-auto">
-                <Link href="/" aria_label="">
+                <Link href="/" aria_label="livingonline logo">
                     <div className="w-full h-10">
-                        <img
-                            src="/logo/living-online.svg"
-                            alt=""
-                            className="w-full h-10 object-contain"
+                        <PictureInternalContain
+                            alternative_text="livingonline logo"
+                            source="/logo/living-online.svg"
                         />
                     </div>
                 </Link>
@@ -82,7 +88,7 @@ const Header = ( props ) => {
 
                             return (
                                 <li className="font-lato cursor-pointer text-white tracking-widest" key={ "navigation-" + value.slug } onMouseEnter={ () => updateNavigationDisplay( value.data.order ) }>
-                                    <Link href={ value.data.slug } aria_label="">
+                                    <Link href={ value.data.slug } aria_label={ value.data.title }>
                                         { value.data.title }
                                     </Link>
                                 </li>

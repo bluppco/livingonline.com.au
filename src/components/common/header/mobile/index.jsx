@@ -1,11 +1,15 @@
+// IMPORTS FRAMER MOTION
 import { motion, AnimatePresence } from "framer-motion"
+
+// IMPORTS REACT
 import { useState } from "react"
 
 // IMPORTS COMPONENTS
-import Li from "./li/index"
+import ListItem from "@/atoms/header/mobile/list-item/index.jsx"
 
 // IMPORTS ATOMS
-import Link from "@/atoms/links/jsx/index"
+import Link from "@/atoms/links/jsx/index.jsx"
+import PictureInternalContain from "@/atoms/picture/internal/jsx/contain/index.jsx"
 
 const HeaderMobile = ( props ) => {
 
@@ -16,12 +20,11 @@ const HeaderMobile = ( props ) => {
     return (
         <header className={` ${ env === "staging" ? "mt-16" : "" } md:hidden px-4 py-2 w-full bg-gradient-to-b from-[#303236] to-[#130904]`}>
             <div className="flex justify-between items-center z-20">
-                <Link href="/" aria_label="">
+                <Link href="/" aria_label="livingonline mobile header logo">
                     <div className="w-52 aspect-[4/1]">
-                        <img
-                            src="/logo/living-online.svg"
-                            alt=""
-                            className="w-52 aspect-[4/1]"
+                        <PictureInternalContain
+                            alternative_text="livingonline mobile header logo"
+                            source="/logo/living-online.svg"
                         />
                     </div>
                 </Link>
@@ -29,20 +32,23 @@ const HeaderMobile = ( props ) => {
                     {
 
                         isOpen &&
-                        <img
-                            src="/icons/close.svg"
-                            className="w-4 aspect-square"
-                        />
+                        <div className="w-4 aspect-square">
+                            <PictureInternalContain
+                                alternative_text="close icon"
+                                source="/icons/close.svg"
+                            />
+                        </div>
 
                     }
                     {
 
                         !isOpen &&
-                        <img
-                            src="/icons/menu.svg"
-                            className="w-6 aspect-square"
-                        />
-
+                        <div className="w-6 aspect-square">
+                            <PictureInternalContain
+                                alternative_text="menu icon"
+                                source="/icons/menu.svg"
+                            />
+                        </div>
                     }
                 </div>
             </div>
@@ -63,13 +69,13 @@ const HeaderMobile = ( props ) => {
                     >
                         <div className={`flex flex-col gap-1 items-center justify-center h-full relative ${ isOpen ? "z-50" : "hidden"}`}>
                             <ul className="flex flex-col justify-center items-center gap-8">
-                                <Li href="/">Home</Li>
-                                <Li href="/digital-marketing-agency">Digital Marketing</Li>
-                                <Li href="/digital-marketing-agency/digital-marketing-awards">Awards</Li>
-                                <Li href="/case-studies">Our Work</Li>
-                                <Li href="/digital-marketing-agency/digital-marketing-blog">Insights</Li>
-                                <Li href="/about">About</Li>
-                                <Li href="/contact-us">Contact</Li>
+                                <ListItem href="/" aria_label="Explore Home">Home</ListItem>
+                                <ListItem href="/digital-marketing-agency" aria_label="Explore Digital Marketing">Digital Marketing</ListItem>
+                                <ListItem href="/digital-marketing-agency/digital-marketing-awards" aria_label="Explore Awards">Awards</ListItem>
+                                <ListItem href="/case-studies" aria_label="Explore Our Work">Our Work</ListItem>
+                                <ListItem href="/digital-marketing-agency/digital-marketing-blog" aria_label="Explore Insights">Insights</ListItem>
+                                <ListItem href="/about" aria_label="Explore About">About</ListItem>
+                                <ListItem href="/contact-us" aria_label="Explore Contact">Contact</ListItem>
                             </ul>
                         </div>
                     </motion.div>

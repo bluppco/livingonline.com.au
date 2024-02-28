@@ -5,7 +5,13 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"
 
 const CaseStudyCarousel = ( props ) => {
 
-    const { data, CDN_LINK, PROJECT } = props
+    const {
+
+        CDN,
+        data,
+        PROJECT
+
+    } = props
 
     return (
         <section className="w-full h-full">
@@ -37,12 +43,12 @@ const CaseStudyCarousel = ( props ) => {
 
                     data.map( ( value, index ) => {
                         return (
-                            <div key={ "case-study-image-" + index } className="relative w-full h-96 space-y-4 flex flex-col items-center justify-center" style={{ backgroundImage: `url(${ CDN_LINK + PROJECT + "/" + value.cover + "?quality=80" })` }}>
+                            <div key={ "case-study-image-" + index } className="relative w-full h-96 flex flex-col items-center justify-center bg-cover" style={{ backgroundImage: `url(${ CDN + PROJECT + "/" + value.cover + "?quality=80" + "&width=800" })` }}>
                                 <div className="space-y-4 px-20">
-                                    <p className="text-lg text-white font-lato capitalize font-bold text-center relative z-10">{ value.company_name }</p>
-                                    <p className="text-3xl text-white font-lato capitalize font-bold text-center relative z-10">{ value.title }</p>
+                                    <p className="md:text-lg text-white font-lato capitalize font-bold text-center relative z-10">{ value.company_name }</p>
+                                    <p className="text-xl md:text-3xl text-white font-lato capitalize font-bold text-center relative z-10">{ value.title }</p>
                                 </div>
-                                <div className="bg-red-700/80 h-full w-full absolute top-0 opacity-90" style={{ backgroundColor: value.color_code }} />
+                                <div className="bg-red-700/80 h-full w-full absolute top-0 left-0 opacity-90" style={{ backgroundColor: value.color_code }} />
                             </div>
                         )
                     })

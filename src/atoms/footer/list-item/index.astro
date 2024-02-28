@@ -1,0 +1,34 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import Link from "@/atoms/links/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    aria_label,
+    href
+
+} = Astro.props
+
+---
+<li class="text-white text-lg font-lato hover:text-lo_orange transition-all duration-300 group">
+    <Link href={ href } aria_label={ aria_label }>
+        <div class="flex gap-1 items-center">
+            <slot/>
+            <div class="group-hover:hidden size-5">
+                <PictureInternalContain
+                    alternative_text="greater than icon"
+                    source="/icons/greater-than.svg"
+                />
+            </div>
+            <div class="hidden group-hover:block size-5">
+                <PictureInternalContain
+                    alternative_text="greater than orange icon"
+                    source="/icons/greater-than-orange.svg"
+                />
+            </div>
+        </div>
+    </Link>
+</li>

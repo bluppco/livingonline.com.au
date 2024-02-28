@@ -1,11 +1,16 @@
+// IMPORTS ATOMS
+import PictureInternalContain from "@/atoms/picture/internal/jsx/contain/index.jsx"
+
 // IMPORTS MARKED
 import { marked } from "marked"
 
+// IMPORTS REACT
 import { useState } from "react"
 
 const ReadMoreButton = ( props ) => {
 
     const [ showContent, setShowContent ] = useState(false)
+    // GET PROPS
     const { text } = props
     const html = marked.parse(text)
 
@@ -26,23 +31,23 @@ const ReadMoreButton = ( props ) => {
                 {
 
                     showContent &&
-
-                    <img
-                        src="/icons/arrow-up.svg"
-                        alt=""
-                        className="size-6"
-                    />
+                    <div className="size-6">
+                        <PictureInternalContain
+                            alternative_text="arrow up icon"
+                            source="/icons/arrow-up.svg"
+                        />
+                    </div>
 
                 }
                 {
 
                     !showContent &&
-
-                    <img
-                        src="/icons/arrow-down.svg"
-                        alt=""
-                        className="size-6"
-                    />
+                    <div className="size-6">
+                        <PictureInternalContain
+                            alternative_text="arrow down icon"
+                            source="/icons/arrow-down.svg"
+                        />
+                    </div>
 
                 }
             </button>

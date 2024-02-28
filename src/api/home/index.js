@@ -1,11 +1,7 @@
-import { endpointFetch } from "../../functions/endpoint"
-
-export const homeAPI = async ( environment ) => {
-
-    const endpoint = endpointFetch( environment )
+export const homeAPI = async ( ENVIRONMENT, ENDPOINT ) => {
 
     // NETWORK CALL TO GET DATA
-    const network_data = await fetch( endpoint + "/home" )
+    const network_data = await fetch( ENDPOINT + "/home" )
     const data_json = await network_data.json()
 
     const { home, case_studies, meta_tags } = data_json.data
