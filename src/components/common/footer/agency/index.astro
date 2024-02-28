@@ -1,14 +1,16 @@
 ---
+
 // IMPORTS ASTRO COMPONENTS
-import FooterTitle from "../title/index.astro"
-import Li from "../li/index.astro"
+import FooterTitle from "@/components/common/footer/title/index.astro"
+import ListItem from "@/atoms/footer/list-item/index.astro"
+
 ---
 <section class="space-y-10">
     <FooterTitle>Agency</FooterTitle>
     <ul class="space-y-6">
-        <Li href="/about-us" aria_label="">About Us</Li>
-        <Li href="/careers" aria_label="">Careers</Li>
-        <Li href="/digital-marketing-agency/newsletter" aria_label="">Newsletter</Li>
-        <Li href="/contact-us" aria_label="">Contact Us</Li>
+        <ListItem href="/about-us" aria_label="Explore About Us">About Us</ListItem>
+        <ListItem href="/careers" aria_label="Explore Careers">Careers</ListItem>
+        <ListItem href="/digital-marketing-agency/newsletter" aria_label="Explore Newsletter">Newsletter</ListItem>
+        <ListItem href="/contact-us" aria_label="Explore Contact Us">Contact Us</ListItem>
     </ul>
 </section>

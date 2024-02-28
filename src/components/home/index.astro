@@ -1,0 +1,81 @@
+---
+
+// IMPORTS ASTRO COMPONENTS
+import Awards from "@/components/home/awards/index.astro"
+import CaseStudies from "@/components/home/case-studies/index.astro"
+import Contact from "@/components/home/contact/index.astro"
+import DMAgencyPerth from "@/components/home/dm-agency-perth/index.astro"
+import Footer from "@/components/common/footer/index.astro"
+import FullServiceDMAgency from "@/components/home/full-service-dm-agency/index.astro"
+import Header from "@/components/common/header/index.astro"
+import HeaderBanner from "@/components/common/header-banner/index.astro"
+import Hero from "@/components/home/hero/index.astro"
+import Outcomes from "@/components/home/outcomes/index.astro"
+import Platforms from "@/components/home/platforms/index.astro"
+import TopDMCompany from "@/components/home/top-dm-agency/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    case_studies,
+    CDN,
+    ENVIRONMENT,
+    home_data,
+    PROJECT
+
+} = Astro.props
+
+---
+
+<section class="md:h-screen md:max-h-screen bg-gradient-to-b from-[#303236] to-[#130904]">
+    <HeaderBanner
+        ENVIRONMENT={ ENVIRONMENT }
+    />
+    <Header />
+    <Hero
+        data={ home_data.hero }
+    />
+</section>
+<Awards
+    CDN={ CDN }
+    data={ home_data.awards }
+    PROJECT={ PROJECT }
+/>
+<DMAgencyPerth
+    data={ home_data.dm_agency_perth }
+/>
+<FullServiceDMAgency
+    data={ home_data.full_service_dm_agency }
+    dm_services={ home_data.dm_services }
+    dm_strategy={ home_data.dm_strategy }
+    dm_planning={ home_data.dm_planning }
+    dm_management={ home_data.dm_management }
+    dm_audits={ home_data.dm_audits }
+/>
+<Platforms
+    CDN={ CDN }
+    data={ home_data.platforms }
+    PROJECT={ PROJECT }
+/>
+<Outcomes
+    blazingly_fast_speed={ home_data.blazingly_fast_speed }
+    data={ home_data.outcomes }
+    massively_reduced_costs={ home_data.massively_reduced_costs }
+    skyrocketing_revenue={ home_data.skyrocketing_revenue }
+/>
+<CaseStudies
+    case_studies={ case_studies }
+    CDN={ CDN }
+    data={ home_data.case_studies }
+    PROJECT={ PROJECT }
+/>
+<TopDMCompany
+    bake_yourself_profit={ home_data.bake_yourself_profit }
+    data={ home_data.top_dm_company }
+    rediscover_the_sweet_feeling={ home_data.rediscover_the_sweet_feeling }
+    unchain_yourself={ home_data.unchain_yourself }
+/>
+<Contact
+    data={ home_data.contact }
+/>
+<Footer />

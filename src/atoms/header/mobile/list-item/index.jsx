@@ -1,13 +1,19 @@
 // IMPORTS ATOMS
 import Link from "@/atoms/links/jsx/index"
 
-const HeaderMobileItem = ( props ) => {
+const ListItem = ( props ) => {
 
-    const { href } = props
+    // GET PROPS
+    const {
+
+        aria_label,
+        href
+
+    } = props
 
     return(
         <li className="text-lg uppercase font-lato text-white tracking-widest">
-            <Link href={ href } aria_label="">
+            <Link href={ href } aria_label={ aria_label }>
                 { props.children }
             </Link>
         </li>
@@ -15,4 +21,4 @@ const HeaderMobileItem = ( props ) => {
 
 }
 
-export default HeaderMobileItem
+export default ListItem

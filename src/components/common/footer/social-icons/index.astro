@@ -1,38 +1,44 @@
 ---
+
 // IMPORTS ASTRO COMPONENTS
-import SocialIconImage from "./image/index.astro"
+import SocialIconImage from "@/components/common/footer/social-icons/image/index.astro"
 
 // IMPORTS ASTRO ATOMS
 import Link from "@/atoms/links/target-blank/index.astro"
+import PictureInternal from "@/atoms/picture/internal/contain/index.astro"
+
 ---
 <section class="flex gap-6 items-center justify-center md:justify-start">
     <SocialIconImage
+        alternative_text="instagram icon"
+        aria_label="instagram icon"
         href="https://www.instagram.com/living.online/"
-        src="/social-icons/white/instagram.svg"
-        alt=""
+        source="/social-icons/white/instagram.svg"
     />
     <SocialIconImage
+        alternative_text="linkedin icon"
+        aria_label="linkedin icon"
         href="https://au.linkedin.com/company/living-online/"
-        src="/social-icons/white/linkedin.svg"
-        alt=""
+        source="/social-icons/white/linkedin.svg"
     />
     <SocialIconImage
+        alternative_text="facebook icon"
+        aria_label="facebook icon"
         href="https://www.facebook.com/LivingOnlineTeam/"
-        src="/social-icons/white/facebook.svg"
-        alt=""
+        source="/social-icons/white/facebook.svg"
     />
-    <div>
-        <Link href="https://twitter.com/LivingOnline" aria_label="">
-            <img
-                src="/social-icons/white/x.svg"
-                alt=""
-                class="size-6"
+    <Link href="https://twitter.com/LivingOnline" aria_label="">
+        <div class="size-6">
+            <PictureInternal
+                alternative_text="x icon"
+                source="/social-icons/white/x.svg"
             />
-        </Link>
-    </div>
+        </div>
+    </Link>
     <SocialIconImage
+        alternative_text="google icon"
+        aria_label="google icon"
         href="https://www.google.com/maps/place/Living+Online/@-31.9476516,115.8247418,17z/data=!3m2!4b1!5s0x2a32a5169cb74017:0x393601ffae7d0417!4m5!3m4!1s0x2a32a516e65220e7:0x31acafa6d52703b!8m2!3d-31.9476516!4d115.8247418"
-        src="/social-icons/white/google.svg"
-        alt=""
+        source="/social-icons/white/google.svg"
     />
 </section>

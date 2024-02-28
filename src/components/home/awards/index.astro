@@ -1,10 +1,20 @@
 ---
+
 // IMPORTS ASTRO COMPONENTS
-import AwardImage from "./award-image/index.astro"
+import AwardImage from "@/components/home/awards/award-image/index.astro"
 
-const { data } = Astro.props
+// GET ASTRO PROPS
+const {
 
+    CDN,
+    data,
+    PROJECT
+
+} = Astro.props
+
+// SORTS IMAGES ARRAY
 const images = data.images.sort(( a,b ) => a.order - b.order )
+
 ---
 <section class="grid grid-cols-2 gap-8 md:flex md:gap-4 md:items-center md:justify-between bg-lo_zinc p-10">
     {
@@ -14,8 +24,10 @@ const images = data.images.sort(( a,b ) => a.order - b.order )
             return(
                 <div class="flex justify-center md:justify-start">
                     <AwardImage
-                        src={ value.file }
-                        alt=""
+                        alternative_text=""
+                        CDN={ CDN }
+                        PROJECT={ PROJECT }
+                        source={ value.file }
                     />
                 </div>
             )

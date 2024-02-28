@@ -1,14 +1,15 @@
+// IMPORTS COMPONENTS
+import ReadMore from "@/components/common/read-more/index.jsx"
+
+// IMPORTS ATOMS
+import HeadingFourJSX from "@/atoms/heading/four/jsx/index.jsx"
+
 // IMPORTS MARKED
 import { marked } from "marked"
 
-// IMPORTS ATOMS
-import HeadingFourJSX from "@/atoms/heading/four/jsx/index"
-
-// IMPORTS COMPONENTS
-import ReadMore from "@/components/common/read-more/index"
-
 const Advantage = ( props ) => {
 
+    // GET PROPS
     const { data } = props
     const html = marked.parse( data.description )
 

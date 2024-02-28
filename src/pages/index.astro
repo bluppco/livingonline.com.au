@@ -1,74 +1,49 @@
 ---
-import { homeAPI } from "../api/home/index"
 
+// RUNTIME
 const runtime = Astro.locals.runtime;
-const data = await homeAPI( runtime.env.ENVIRONMENT )
 
-const { home_data, case_studies, meta_tags } = data
+const {
 
-const CDN_LINK = runtime.env.CDN_LINK
-const PROJECT = runtime.env.PROJECT
+	CDN,
+	ENDPOINT,
+	ENVIRONMENT,
+	PROJECT
 
-// IMPORTS JSX COMPONENTS
-import Header from "../components/common/header"
+} = runtime.env
 
-// IMPORT ASTRO COMPONENTS
-import Layout from "../layouts/layout/index.astro"
-import HeaderBanner from "../components/common/header-banner/index.astro"
-import Hero from "../components/home/hero/index.astro"
-import Awards from "../components/home/awards/index.astro"
-import DMAgencyPerth from "../components/home/dm-agency-perth/index.astro"
-import FullServiceDMAgency from "../components/home/full-service-dm-agency/index.astro"
-import Platforms from "../components/home/platforms/index.astro"
-import Outcomes from "../components/home/outcomes/index.astro"
-import TopDMCompany from "../components/home/top-dm-agency/index.astro"
-import Contact from "../components/home/contact/index.astro"
-import CaseStudies from "../components/home/case-studies/index.astro"
-import Footer from "../components/common/footer/index.astro"
+// API
+import { homeAPI } from "@/api/home/index.js"
+
+const data = await homeAPI( ENVIRONMENT, ENDPOINT )
+
+const {
+
+	case_studies,
+	home_data,
+	meta_tags
+
+} = data
+
+// IMPORTS ASTRO LAYOUTS
+import Layout from "@/layouts/layout/index.astro"
+
+// IMPORTS HOME COMPONENT
+import Home from "@/components/home/index.astro"
+
 ---
 <Layout
-	title={ meta_tags.title }
+	CDN={ CDN }
 	description={ meta_tags.description }
 	image={ meta_tags.image }
-	CDN_LINK={ CDN_LINK }
 	PROJECT={ PROJECT }
+	title={ meta_tags.title }
 >
-	<section class="md:h-screen md:max-h-screen bg-gradient-to-b from-[#303236] to-[#130904]">
-		<HeaderBanner />
-		<Header client:load />
-		<Hero data={ home_data.hero } />
-	</section>
-	<Awards data={ home_data.awards } />
-	<DMAgencyPerth data={ home_data.dm_agency_perth } />
-	<FullServiceDMAgency
-		data={ home_data.full_service_dm_agency }
-		dm_services={ home_data.dm_services }
-		dm_strategy={ home_data.dm_strategy }
-		dm_planning={ home_data.dm_planning }
-		dm_management={ home_data.dm_management }
-		dm_audits={ home_data.dm_audits }
-	/>
-	<Platforms data={ home_data.platforms } />
-	<Outcomes
-		data={ home_data.outcomes }
-		skyrocketing_revenue={ home_data.skyrocketing_revenue }
-		massively_reduced_costs={ home_data.massively_reduced_costs }
-		blazingly_fast_speed={ home_data.blazingly_fast_speed }
-	/>
-	<CaseStudies
-		data={ home_data.case_studies }
+	<Home
 		case_studies={ case_studies }
-		CDN_LINK={ CDN_LINK }
+		CDN={ CDN }
+		ENVIRONMENT={ ENVIRONMENT }
+		home_data={ home_data }
 		PROJECT={ PROJECT }
 	/>
-	<TopDMCompany
-		data={ home_data.top_dm_company }
-		unchain_yourself={ home_data.unchain_yourself }
-		bake_yourself_profit={ home_data.bake_yourself_profit }
-		rediscover_the_sweet_feeling={ home_data.rediscover_the_sweet_feeling }
-	/>
-	<Contact
-		data={ home_data.contact }
-	/>
-	<Footer />
 </Layout>
