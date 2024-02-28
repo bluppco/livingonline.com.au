@@ -56,7 +56,7 @@
 }
 .markdown.orangeh3 strong {
 
-    @apply text-4xl md:text-6xl font-lato font-bold capitalize text-lo_orange md:leading-tight !important;
+    @apply text-4xl md:text-7xl font-lato font-bold capitalize text-lo_orange md:leading-tight !important;
 
 }
 .markdown.h1 p {
@@ -66,7 +66,7 @@
 }
 .markdown.h3 p {
 
-    @apply font-lato text-4xl md:text-6xl font-bold leading-tight md:leading-tight !important;
+    @apply font-lato text-4xl md:text-7xl font-bold leading-tight md:leading-tight !important;
 
 }
 .markdown.whiteh3 p {
