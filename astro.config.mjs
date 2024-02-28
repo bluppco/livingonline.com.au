@@ -7,12 +7,15 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), tailwind({applyBaseStyles: false}), react()],
-  output: "server",
-  adapter: cloudflare({
-    runtime: {
-      mode: 'local',
-      type: 'pages'
-    }
-  })
+	integrations: [mdx(), tailwind({ applyBaseStyles: false }), react()],
+	output: "server",
+	adapter: cloudflare({
+		routes: {
+			exclude: ["/icons/*", "/social-icons/*"]
+		},
+		runtime: {
+			mode: 'local',
+			type: 'pages'
+		}
+	})
 });
