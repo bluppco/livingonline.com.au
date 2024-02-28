@@ -1,0 +1,13 @@
+---
+
+// IMPORTS ASTRO COMPONENTS
+import Advantage from "@/components/home/advantage/jsx/index.jsx"
+
+// GET ASTRO PROPS
+const { data } = Astro.props
+
+---
+<Advantage
+    client:load
+    data={ data }
+/>

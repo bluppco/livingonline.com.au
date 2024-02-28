@@ -1,17 +1,16 @@
 ---
-const { href, aria_label, target } = Astro.props
+
+// IMPORTS ASTRO ATOMS
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+
 ---
-<div>
-    <a href={ href } aria-label={ aria_label } target={ target ? "_blank" : "" }>
-        <button class="flex md:gap-2 items-center justify-center h-[72px] px-6 bg-body hover:bg-lo_orange transition-all duration-200 ease-in text-white text-sm md:text-lg font-lato md:font-semibold rounded">
-            <slot/>
-            <div class="size-6">
-                <img
-                    src="/icons/right-arrow.svg"
-                    alt=""
-                    class="size-6"
-                />
-            </div>
-        </button>
-    </a>
-</div>
+<button class="flex md:gap-2 items-center justify-center h-[72px] px-6 bg-body hover:bg-lo_orange transition-all duration-200 ease-in text-white text-sm md:text-lg font-lato md:font-semibold rounded">
+    <slot/>
+    <div class="size-6">
+        <PictureInternalContain
+            alternative_text="right arrow"
+            source="/icons/right-arrow.svg"
+        />
+    </div>
+</button>

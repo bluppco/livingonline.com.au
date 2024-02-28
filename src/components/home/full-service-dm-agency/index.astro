@@ -1,6 +1,4 @@
 ---
-// IMPORTS MARKED
-import { marked } from "marked"
 
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
@@ -9,18 +7,22 @@ import Container from "@/layouts/container/index.astro"
 import TitleDescription from "@/components/home/title-description/index.astro"
 
 // IMPORTS ASTRO ATOMS
-import PrimaryButton from "@/atoms/buttons/primary/index.astro"
-import Link from "@/atoms/links/index.astro"
 import HeadingTwoOrangeUppercase from "@/atoms/heading/two/orange/uppercase/index.astro"
+import Link from "@/atoms/links/index.astro"
+import PrimaryButton from "@/atoms/buttons/primary/index.astro"
 
+// IMPORTS MARKED
+import { marked } from "marked"
+
+// GET ASTRO PROPS
 const {
 
     data,
-    dm_services,
-    dm_strategy,
-    dm_planning,
+    dm_audits,
     dm_management,
-    dm_audits
+    dm_planning,
+    dm_services,
+    dm_strategy
 
 } = Astro.props
 
@@ -33,32 +35,32 @@ const html = marked.parse(data.sub_title)
             <section set:html={ html } class="markdown whiteh3 orangeh3" />
             <section class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 md:gap-y-16">
                 <TitleDescription
-                    title={ dm_services.title }
                     description={ dm_services.description }
                     order={ 1 }
+                    title={ dm_services.title }
                 />
                 <TitleDescription
-                    title={ dm_strategy.title }
                     description={ dm_strategy.description }
                     order={ 2 }
+                    title={ dm_strategy.title }
                 />
                 <TitleDescription
-                    title={ dm_planning.title }
                     description={ dm_planning.description }
                     order={ 3 }
+                    title={ dm_planning.title }
                 />
                 <TitleDescription
-                    title={ dm_management.title }
                     description={ dm_management.description }
                     order={ 4 }
+                    title={ dm_management.title }
                 />
                 <TitleDescription
-                    title={ dm_audits.title }
                     description={ dm_audits.description }
                     order={ 5 }
+                    title={ dm_audits.title }
                 />
-                <Link href={ data.button_link } aria_label="">
-                    <PrimaryButton >{ data.button_title }</PrimaryButton>
+                <Link href={ data.button_link } aria_label={ data.button_title }>
+                    <PrimaryButton>{ data.button_title }</PrimaryButton>
                 </Link>
             </section>
         </section>

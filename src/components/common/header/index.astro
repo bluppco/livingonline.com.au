@@ -1,0 +1,19 @@
+---
+
+// IMPORTS JSX COMPONENTS
+import Header from "@/components/common/header/jsx/index.jsx"
+
+// GET ASTRO PROPS
+const {
+
+    bg,
+    fixed_top
+
+} = Astro.props
+
+---
+<Header
+    bg={ bg }
+    client:load
+    fixed_top={ fixed_top }
+/>
