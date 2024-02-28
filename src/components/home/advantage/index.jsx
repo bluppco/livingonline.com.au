@@ -15,8 +15,10 @@ const Advantage = ( props ) => {
     return(
         <div className="space-y-4 md:space-y-6">
             <HeadingFourJSX>{ data.title }</HeadingFourJSX>
-            <section dangerouslySetInnerHTML={{ __html: html }}className="markdown textlg" />
-            <ReadMore text={ data.more_description } />
+            <div>
+                <div dangerouslySetInnerHTML={{ __html: html }}className="markdown textlg" />
+                <ReadMore text={ data.more_description } />
+            </div>
         </div>
     )
 
