@@ -29,16 +29,16 @@ const sub_title = marked.parse( data.sub_title )
 ---
 <section class="py-20 bg-gradient-to-b from-[#303236] to-[#130904]">
     <Container>
-        <section class="flex flex-col md:items-center gap-10">
+        <section class="flex flex-col md:items-center gap-8">
             <HeadingTwoOrangeCenter>{ data.title }</HeadingTwoOrangeCenter>
-            <section set:html={ sub_title } class="markdown whiteh3 orangeh3" />
+            <section set:html={ sub_title } class="markdown whiteh3 orangeh3 pb-6" />
             <CaseStudyCarousel
                 CDN={ CDN }
                 client:load
                 data={ case_studies }
                 PROJECT={ PROJECT }
             />
-            <section set:html={ html } class="markdown text3xl textwhite" />
+            <section set:html={ html } class="markdown text3xl textwhite pt-10" />
             <Link href={ data.button_link } aria_label={ data.button_title }>
                 <PrimaryButton>{ data.button_title }</PrimaryButton>
             </Link>
