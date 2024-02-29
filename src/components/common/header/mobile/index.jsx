@@ -1,9 +1,3 @@
-// IMPORTS FRAMER MOTION
-import { motion, AnimatePresence } from "framer-motion"
-
-// IMPORTS REACT
-import { useState } from "react"
-
 // IMPORTS COMPONENTS
 import ListItem from "@/atoms/header/mobile/list-item/index.jsx"
 
@@ -11,14 +5,20 @@ import ListItem from "@/atoms/header/mobile/list-item/index.jsx"
 import Link from "@/atoms/links/jsx/index.jsx"
 import PictureInternalContain from "@/atoms/picture/internal/jsx/contain/index.jsx"
 
+// IMPORTS FRAMER MOTION
+import { motion, AnimatePresence } from "framer-motion"
+
+// IMPORTS REACT
+import { useState } from "react"
+
 const HeaderMobile = ( props ) => {
 
-    const { env } = props
+    const { ENVIRONMENT } = props
 
     const [ isOpen, updateOpen ] = useState( false )
 
     return (
-        <header className={` ${ env === "staging" ? "mt-16" : "" } md:hidden px-4 py-2 w-full bg-gradient-to-b from-[#303236] to-[#130904]`}>
+        <header className={` ${ ENVIRONMENT === "staging" ? "mt-16" : "" } md:hidden px-4 py-2 w-full bg-gradient-to-b from-[#303236] to-[#130904]`}>
             <div className="flex justify-between items-center z-20">
                 <Link href="/" aria_label="livingonline mobile header logo">
                     <div className="w-52 aspect-[4/1]">
@@ -52,7 +52,7 @@ const HeaderMobile = ( props ) => {
                     }
                 </div>
             </div>
-            <AnimatePresence initial={false}>
+            <AnimatePresence initial={ false }>
                 {
 
                     <motion.div
@@ -61,11 +61,11 @@ const HeaderMobile = ( props ) => {
                         animate={ isOpen ? "open" : "collapsed" }
                         exit="collapsed"
                         variants={{
-                            open: { opacity: 1, height: "100vh" },
-                            collapsed: { opacity: 0, height: "0px" }
+                            open: { opacity: 1, display: "block" },
+                            collapsed: { opacity: 0, display: "none" }
                         }}
                         transition={{ duration: 0.3 }}
-                        className="grow"
+                        className="grow !h-[calc(100vh-6rem)] !p-0"
                     >
                         <div className={`flex flex-col gap-1 items-center justify-center h-full relative ${ isOpen ? "z-50" : "hidden"}`}>
                             <ul className="flex flex-col justify-center items-center gap-8">
