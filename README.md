@@ -51,5 +51,5 @@ PROJECT
 #### Headings
 - One : text-4xl md:text-7xl font-lato font-bold
 - Two : text-lg md:text-2xl font-lato font-bold
-- Three : text-4xl md:text-7x font-lato font-bold
+- Three : text-4xl md:text-6xl font-lato font-bold
 - Four : text-2xl md:text-3xl font-lato font-bold

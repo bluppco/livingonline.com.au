@@ -18,7 +18,7 @@ const HeaderMobile = ( props ) => {
     const [ isOpen, updateOpen ] = useState( false )
 
     return (
-        <header className={` ${ ENVIRONMENT === "staging" ? "mt-16" : "" } md:hidden px-4 py-2 w-full bg-gradient-to-b from-[#303236] to-[#130904]`}>
+        <header className="md:hidden px-4 py-2 w-full bg-gradient-to-b from-[#303236] to-[#130904]">
             <div className="flex justify-between items-center z-20">
                 <Link href="/" aria_label="livingonline mobile header logo">
                     <div className="w-52 aspect-[4/1]">
