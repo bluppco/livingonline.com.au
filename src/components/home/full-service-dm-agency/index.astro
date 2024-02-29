@@ -30,10 +30,10 @@ const html = marked.parse(data.sub_title)
 ---
 <section class="py-16 md:py-28 bg-gradient-to-b from-[#303236] to-[#130904]">
     <Container>
-        <section class="space-y-10">
+        <section class="space-y-2">
             <HeadingTwoOrangeUppercase>{ data.title }</HeadingTwoOrangeUppercase>
             <section set:html={ html } class="markdown whiteh3 orangeh3" />
-            <section class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 md:gap-y-16">
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 md:gap-y-16 pt-10">
                 <TitleDescription
                     description={ dm_services.description }
                     order={ 1 }

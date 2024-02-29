@@ -17,9 +17,9 @@ const sub_title = marked.parse( data.sub_title )
 ---
 <section class="py-8 md:py-24 bg-gradient-to-b from-[#303236] to-[#130904]">
     <Container>
-        <section class="flex flex-col items-center gap-10 px-4">
+        <section class="flex flex-col items-center gap-4 md:gap-10 md:px-4">
             <HeadingTwoWhiteCenter>{ data.title }</HeadingTwoWhiteCenter>
-            <section set:html={ sub_title } class="markdown whiteh3 orangeh3 text-center" />
+            <section set:html={ sub_title } class="markdown whiteh3large orangeh3large text-center" />
             <div class="pt-4">
                 <Link href={ data.button_link } aria_label={ data.button_title }>
                     <PrimaryButton>{ data.button_title }</PrimaryButton>
