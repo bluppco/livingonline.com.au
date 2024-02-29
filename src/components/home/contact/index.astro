@@ -19,7 +19,7 @@ const sub_title = marked.parse( data.sub_title )
     <Container>
         <section class="flex flex-col items-center gap-10 px-4">
             <HeadingTwoWhiteCenter>{ data.title }</HeadingTwoWhiteCenter>
-            <section set:html={ sub_title } class="markdown whiteh3 orangeh3 text-center" />
+            <section set:html={ sub_title } class="markdown whiteh3large orangeh3large text-center" />
             <div class="pt-4">
                 <Link href={ data.button_link } aria_label={ data.button_title }>
                     <PrimaryButton>{ data.button_title }</PrimaryButton>
