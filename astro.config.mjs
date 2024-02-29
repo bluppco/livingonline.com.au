@@ -17,5 +17,10 @@ export default defineConfig({
 			mode: 'local',
 			type: 'pages'
 		}
-	})
-});
+	}),
+	image: {
+		service: {
+			entrypoint: "astro/assets/services/noop"
+		}
+	}
+})
