@@ -7,6 +7,7 @@ import Header from "@/components/common/header/jsx/index.jsx"
 const {
 
     bg,
+    ENVIRONMENT,
     fixed_top
 
 } = Astro.props
@@ -15,5 +16,6 @@ const {
 <Header
     bg={ bg }
     client:load
+    ENVIRONMENT={ ENVIRONMENT }
     fixed_top={ fixed_top }
 />

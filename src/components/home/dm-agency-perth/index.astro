@@ -18,12 +18,14 @@ const sub_title = marked.parse(data.sub_title)
 
 ---
 <Container>
-    <section class="py-16 md:py-28 space-y-8 md:space-y-10">
+    <section class="py-16 md:py-28">
         <HeadingTwoOrangeUppercase>{ data.title }</HeadingTwoOrangeUppercase>
-        <section set:html={ sub_title } class="markdown h3 orangeh3" />
-        <section set:html={ html } class="markdown largetext" />
-        <Link href={ data.button_link } aria_lable={ data.button_title }>
-            <PrimaryButton>{ data.button_title }</PrimaryButton>
-        </Link>
+        <section class="space-y-8">
+            <section set:html={ sub_title } class="markdown h3 orangeh3" />
+            <section set:html={ html } class="markdown largetext" />
+            <Link href={ data.button_link } aria_lable={ data.button_title }>
+                <PrimaryButton>{ data.button_title }</PrimaryButton>
+            </Link>
+        </section>
     </section>
 </Container>

@@ -24,6 +24,7 @@ const Header = ( props ) => {
     const {
 
         bg,
+        ENVIRONMENT,
         fixed_top
 
     } = props
@@ -100,7 +101,7 @@ const Header = ( props ) => {
                 </ul>
             </nav>
         </header>
-        <HeaderMobile />
+        <HeaderMobile ENVIRONMENT={ ENVIRONMENT } />
         </>
     )
 
