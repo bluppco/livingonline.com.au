@@ -14,7 +14,7 @@ const Advantage = ( props ) => {
     const html = marked.parse( data.description )
 
     return(
-        <div className="space-y-4 md:space-y-6">
+        <div className="space-y-2">
             <HeadingFourJSX>{ data.title }</HeadingFourJSX>
             <div>
                 <div dangerouslySetInnerHTML={{ __html: html }}className="markdown textlg" />

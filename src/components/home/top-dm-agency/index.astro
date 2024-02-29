@@ -17,10 +17,10 @@ import { marked } from "marked"
 // GET ASTRO PROPS
 const {
 
-    data,
-    unchain_yourself,
     bake_yourself_profit,
-    rediscover_the_sweet_feeling
+    data,
+    rediscover_the_sweet_feeling,
+    unchain_yourself
 
 } = Astro.props
 
@@ -29,7 +29,7 @@ const sub_title = marked.parse( data.sub_title )
 
 ---
 <Container>
-    <section class="py-16 md:py-28 space-y-8 md:space-y-10">
+    <section class="py-16 md:py-28 space-y-4">
         <HeadingTwoOrangeUppercase>{ data.title }</HeadingTwoOrangeUppercase>
         <section set:html={ sub_title } class="markdown h3 orangeh3" />
         <section class="grid md:grid-cols-3 gap-8 md:pt-10">
@@ -43,7 +43,7 @@ const sub_title = marked.parse( data.sub_title )
                 data={ rediscover_the_sweet_feeling }
             />
         </section>
-        <section set:html={ html } class="markdown text-2xl" />
+        <section set:html={ html } class="markdown text-2xl pt-10" />
         <Link href={ data.button_link } aria_label={ data.button_title }>
             <PrimaryButton>{ data.button_title }</PrimaryButton>
         </LINK>

@@ -41,7 +41,7 @@
 }
 .markdown p {
 
-    @apply text-base font-lato py-2 md:py-4 !important;
+    @apply font-lato py-2 md:py-4 !important;
 
 }
 .markdown a {
